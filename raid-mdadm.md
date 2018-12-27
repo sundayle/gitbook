@@ -26,3 +26,25 @@ nvme1n1     259:5    0 745.2G  0 disk
 ```
 mdadm -C /dev/md124 -l1 -n2 /dev/nvme0n1p4 /dev/nvme1n1p4
 ```
+```
+cat /proc/mdstat 
+Personalities : [raid1] 
+md124 : active raid1 nvme1n1p4[1] nvme0n1p4[0]
+      722022208 blocks super 1.2 [2/2] [UU]
+      [===>.................]  resync = 15.2% (110058496/722022208) finish=12.1min speed=838161K/sec
+      bitmap: 6/6 pages [24KB], 65536KB chunk
+
+md125 : active raid1 nvme1n1p3[1] nvme0n1p3[0]
+      512960 blocks super 1.0 [2/2] [UU]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+md126 : active raid1 nvme1n1p2[1] nvme0n1p2[0]
+      16758784 blocks super 1.2 [2/2] [UU]
+      
+md127 : active raid1 nvme1n1p1[1] nvme0n1p1[0]
+      41942016 blocks super 1.2 [2/2] [UU]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+unused devices: <none>
+```
+
