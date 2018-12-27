@@ -64,6 +64,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 ## 挂载
 ```
+mdkir /data
 mount /dev/md124 /data
 ```
 ## fstab
