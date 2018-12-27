@@ -5,6 +5,7 @@
 windows7 pull/push failed to get server certificate
 
 https://stackoverflow.com/questions/48985995/gitkraken-and-github-failed-to-get-server-certificate-the-handle-is-in-the-wr
+
 解决：
 
 1. [下载安装 kb3140245](http://www.catalog.update.microsoft.com/search.aspx?q=kb3140245) 
