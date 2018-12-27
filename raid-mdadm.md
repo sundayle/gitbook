@@ -74,6 +74,10 @@ blkid /dev/md124
 
 echo "UUID=2f595714-9533-4580-9b7e-b8563dcdcd5f /data                   xfs     defaults        0 0" >> /etc/fstab
 ```
+## mdadm.conf
+```
+mdadm -Ds > /etc/mdadm.conf
+```
 
 
 
