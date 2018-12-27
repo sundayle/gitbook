@@ -26,7 +26,9 @@ nvme1n1     259:5    0 745.2G  0 disk
 ```
 mdadm -C /dev/md124 -l1 -n2 /dev/nvme0n1p4 /dev/nvme1n1p4
 ```
+## 查看进度
 ```
+mdadm -D /dev/md124
 cat /proc/mdstat 
 Personalities : [raid1] 
 md124 : active raid1 nvme1n1p4[1] nvme0n1p4[0]
