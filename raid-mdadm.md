@@ -49,4 +49,8 @@ md127 : active raid1 nvme1n1p1[1] nvme0n1p1[0]
 
 unused devices: <none>
 ```
+## 格式化
+```
+mkfs.xfs /dev/md124
+```
 
