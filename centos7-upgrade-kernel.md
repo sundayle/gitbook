@@ -16,6 +16,5 @@ kernel-ml.x86_64                            4.20.0-1.el7.elrepo        elrepo-ke
 kernel-ml.x86_64                            4.19.12-1.el7.elrepo       elrepo-kernel
 
 [root@db43 ~]# yum --enablerepo="elrepo-kernel" install kernel-ml-4.19.12-1.el7.elrepo.x86_64 -y
-
 ```
 
