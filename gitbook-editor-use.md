@@ -1,5 +1,5 @@
 
-# gitbook editor 使用
+# gitbook editor 错误解决
 
 
 windows7 pull/push failed to get server certificate
