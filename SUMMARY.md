@@ -7,5 +7,5 @@
 * [Hardware optimization](hardware-optimization.md)
 * [Software Installation](software-installation.md)
   * [Nginx](software-installation/nginx.md)
-  * PHP
+  * [PHP](software-installation/php.md)
 
