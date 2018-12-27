@@ -14,5 +14,9 @@
 * [Linux内核](kernel.md)
   * [CentOS 7 升级内核](kernel/centos-7-upgrade-kernel.md)
 * [Repo](repo.md)
-  * [aliyun mirrors](repo/aliyun-mirrors.md)
+  * [CentOS 7 YUM和EPEL](repo/aliyun-mirrors.md)
+* [Dockerfile](dockerfile.md)
+  * Nginx
+  * PHP7
+  * [Cobbler](dockerfile/cobbler.md)
 
