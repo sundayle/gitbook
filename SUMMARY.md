@@ -12,5 +12,5 @@
     * [PHP 安装](software-installation/php/php-install.md)
   * [RAID Mdadm](raid-mdadm.md)
 * [Linux内核](kernel.md)
-* [CentOS 7 升级内核](centos7-upgrade-kernel.md)
+* [CentOS 7 升级内核](centos-7-upgrade-kernel.md)
 
