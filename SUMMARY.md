@@ -4,6 +4,7 @@
 * [Gitbook editor](gitbook-editor-use.md)
 * [Hardware optimization](hardware-optimization.md)
   * [NVME PCIE SSD优化](hardware-optimization/nvme-ssd-tuning.md)
+  * [CPU 性能调整](hardware-optimization/cpu-performance.md)
 * [应用安装](software-installation.md)
   * [Nginx](software-installation/nginx.md)
     * [Nginx 安装](software-installation/nginx/nginx-install.md)
