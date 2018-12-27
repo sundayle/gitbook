@@ -21,6 +21,7 @@ for CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do [ -f $C
 cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
 ## 禁用irqbalance
+在版本4.8之前的内核中，irq平衡没有得到有效管理，因为它现在由内置的Linux nvme驱动程序实现。因此，如果你使用的是比4.8更旧的内核，请关闭irqbalance服务,以便尽可能地进行最佳的io处理。
 ```
 systemctl disable irqbalance
 systemctl stop irqbalance
