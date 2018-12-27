@@ -21,7 +21,8 @@ nvme1n1     259:5    0 745.2G  0 disk
 │ └─md125     9:125  0   501M  0 raid1 /boot/efi
 └─nvme1n1p4 259:9    0 688.7G  0 part  
 ```
-创建RAID1
+
+## 创建RAID1
 ```
 mdadm -C /dev/md124 -l1 -n2 /dev/nvme0n1p4 /dev/nvme1n1p4
 ```
