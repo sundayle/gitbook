@@ -14,5 +14,5 @@
 * [Linux内核](kernel.md)
   * [CentOS 7 升级内核](kernel/centos-7-upgrade-kernel.md)
 * [Repo](repo.md)
-  * [阿里云Yum源](repo/aliyun-mirrors.md)
+  * [aliyun mirrors](repo/aliyun-mirrors.md)
 
