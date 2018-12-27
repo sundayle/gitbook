@@ -1,7 +1,8 @@
+Ubuntu
 ```
 apt-get -y install gcc g++ make libtool openssl libssl-dev libpcre3 libpcre3-dev libgd-dev
 ```
-
+CentOS
 ```
 yum install gcc make openssl-devel pcre-devel gd-devel
 ```
