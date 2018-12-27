@@ -1,6 +1,5 @@
 # Summary
 
-* [First Chapter](chapter1.md)
 * [Introduction](README.md)
 * [Gitbook editor](gitbook-editor-use.md)
 * [Hardware optimization](hardware-optimization.md)
