@@ -11,3 +11,11 @@ hdparm -Tt --direct /dev/nvme0n1p4
  Timing O_DIRECT cached reads:   5894 MB in  2.00 seconds = 2949.45 MB/sec
  Timing O_DIRECT disk reads: 8964 MB in  3.00 seconds = 2987.50 MB/sec
 ```
+
+
+第1步：将CPU置于性能模式
+```
+for CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do [ -f $CPUFREQ ] || continue; echo -n performance > $CPUFREQ; done
+
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+```

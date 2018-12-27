@@ -21,7 +21,7 @@ kernel-ml.x86_64                            4.19.12-1.el7.elrepo       elrepo-ke
 ```
 
 ```
-[root@db43 etc]# sudo egrep ^menuentry /boot/grub2/grubenv | cut -f 2 -d \'
+[root@db43 etc]# egrep ^menuentry /boot/grub2/grubenv | cut -f 2 -d \'
 CentOS Linux (4.19.12-1.el7.elrepo.x86_64) 7 (Core)
 CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core)
 CentOS Linux (0-rescue-4de75e64d2d54ea49d12a4b730b2e839) 7 (Core)
