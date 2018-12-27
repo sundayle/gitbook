@@ -8,5 +8,5 @@ https://stackoverflow.com/questions/48985995/gitkraken-and-github-failed-to-get-
 
 1. 下载安装 kb3140245 
 2. 下载安装 easy fix utility
-3. 重启
+3. 重启电脑
 
