@@ -27,24 +27,6 @@ CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core)
 CentOS Linux (0-rescue-4de75e64d2d54ea49d12a4b730b2e839) 7 (Core)
 ```
 ```
-sudo grub2-set-default 0
+grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
-```
-
-
-# 错误解决
-```
-grub2-editenv: error: invalid environment block.
-
-grub2-mkconfig -o /boot/grub2/grubenv 
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-4.19.12-1.el7.elrepo.x86_64
-Found initrd image: /boot/initramfs-4.19.12-1.el7.elrepo.x86_64.img
-Found linux image: /boot/vmlinuz-3.10.0-957.el7.x86_64
-Found initrd image: /boot/initramfs-3.10.0-957.el7.x86_64.img
-Found linux image: /boot/vmlinuz-0-rescue-4de75e64d2d54ea49d12a4b730b2e839
-Found initrd image: /boot/initramfs-0-rescue-4de75e64d2d54ea49d12a4b730b2e839.img
-done
-sudo grub2-set-default 0
-grub2-mkconfig -o /boot/grub2/grubenv 
 ```
