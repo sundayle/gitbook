@@ -8,6 +8,7 @@ RUN mv /etc/yum.repos.d/CentOS-Base.repo{,.backup} \
 && curl -o /etc/yum.repos.d/CentOS-Base.repo $ALIYUN_REPO \
 && curl -o /etc/yum.repos.d/epel.repo $ALIYUN_EPEL \
 && yum update \
+&& yum install cobbler cobbler-web -y \
 
 
 ```
