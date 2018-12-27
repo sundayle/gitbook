@@ -72,7 +72,7 @@ mount /dev/md124 /data
 blkid /dev/md124
 /dev/md124: UUID="2f595714-9533-4580-9b7e-b8563dcdcd5f" TYPE="xfs" 
 
-echo "UUID=2f595714-9533-4580-9b7e-b8563dcdcd5f /data                   xfs     defaults,noatime,nobarrier  0 0" >> /etc/fstab
+UUID=2f595714-9533-4580-9b7e-b8563dcdcd5f /data         xfs defaults,noatime,nobarrier    0 0
 ```
 ## mdadm.conf
 ```
