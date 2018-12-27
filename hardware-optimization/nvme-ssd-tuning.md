@@ -25,7 +25,6 @@ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
 systemctl disable irqbalance
 systemctl stop irqbalance
-
 ```
 
 
