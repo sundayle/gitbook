@@ -11,7 +11,7 @@ yum install gcc make openssl-devel pcre-devel gd-devel
 ```
 INSTALL_PATH=/usr/local/webserver/nginx
 NGINX_MODULE_PATH=/usr/local/src/nginx_module
-jem
+JEMALLOC_PATH=/usr/local/webserver/jemalloc/lib/libjemalloc.so.2
 
 ./configure --prefix=$INSTALL_PATH \
 --with-file-aio \
@@ -32,7 +32,7 @@ jem
 --with-http_stub_status_module \
 --with-http_v2_module \
 --with-pcre \
---with-ld-opt=/usr/local/webserver/jemalloc/lib/libjemalloc.so.2 \
+--with-ld-opt=$JEMALLOC_PATH \
 --add-module=$NGINX_MODULE_PATH/ngx_cache_purge-2.3 \
 --add-module=$NGINX_MODULE_PATH/ngx_slowfs_cache-1.10 \
 --add-module=$NGINX_MODULE_PATH/nginx-rtmp-module-master \
