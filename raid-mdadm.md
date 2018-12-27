@@ -62,4 +62,17 @@ log      =internal log           bsize=4096   blocks=88137, version=2
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
+## 挂载
+```
+mount /dev/md124 /data
+```
+## fstab
+```
+blkid /dev/md124
+/dev/md124: UUID="2f595714-9533-4580-9b7e-b8563dcdcd5f" TYPE="xfs" 
+
+echo "UUID=2f595714-9533-4580-9b7e-b8563dcdcd5f /data                   xfs     defaults        0 0" >> /etc/fstab
+```
+
+
 
