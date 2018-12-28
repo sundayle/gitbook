@@ -109,7 +109,7 @@ mount /dev/md0 /mnt
 拷贝数据
 
 组装阵列
-mdadm --assemble /dev/md0 dev/nvme0n1p1
+mdadm --assemble /dev/md0 /dev/nvme0n1p1 /dev/nvme1n1p1
 
 
 https://serverfault.com/questions/404586/reading-off-of-mdadm-drives-after-server-died
