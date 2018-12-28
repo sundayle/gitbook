@@ -103,11 +103,14 @@ mdadm --manage /dev/md124 --add /dev/nvme0n1p4
 进入恢复模式
 mdadm --examine /dev/nvme0n1p1
 
-mdadm --assemble /dev/md0 dev/nvme0n1p1
 挂载单个磁盘使用 --run
 mdadm --assemble /dev/md0 dev/nvme0n1p1 --run
 mount /dev/md0 /mnt
 拷贝数据
+
+组装阵列
+mdadm --assemble /dev/md0 dev/nvme0n1p1
+
 
 https://serverfault.com/questions/404586/reading-off-of-mdadm-drives-after-server-died
 
