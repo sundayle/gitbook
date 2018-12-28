@@ -1,8 +1,8 @@
 # Summary
 
-* [Introduction](README.md)
-* [Gitbook editor](gitbook-editor-use.md)
-* [Hardware optimization](hardware-optimization.md)
+* [目录](README.md)
+* [WIN7 Gitbook editor 上传错误解决](gitbook-editor-use.md)
+* [硬件优化](hardware-optimization.md)
   * [CPU 性能调整](hardware-optimization/cpu-performance.md)
   * [NVME PCIE SSD优化](hardware-optimization/nvme-ssd-tuning.md)
 * [应用安装](software-installation.md)
