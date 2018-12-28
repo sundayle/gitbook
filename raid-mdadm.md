@@ -107,7 +107,7 @@ mdadm --assemble /dev/md0 dev/nvme0n1p1
 挂载单个磁盘使用 --run
 mdadm --assemble /dev/md0 dev/nvme0n1p1 --run
 mount /dev/md0 /mnt
-
+拷贝数据
 
 https://serverfault.com/questions/404586/reading-off-of-mdadm-drives-after-server-died
 
