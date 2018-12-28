@@ -83,8 +83,30 @@ mdadm -Ds > /etc/mdadm.conf
 echo "MAILADDR admin@sundayle.com" >> /etc/mdadm.conf
 systemctl start mdmonitor
 systemctl status mdmonitor
-
 ```
+# 模拟故障
+设置故障
+```
+mdadm --manage --set-faulty /dev/md124 /dev/nvme0n1p4 
+```
+查看邮件 有报警信息
+
+故障移除
+mdadm /dev/md124 --remove /dev/nvme0n1p4
+mdadm --manage /dev/md124 --add /dev/nvme0n1p4
 
 
 
+# NVME PCIE P3700
+故障恢复
+
+制作CentOS 7.5 系统启动盘
+进入恢复模式
+mdadm --examine /dev/nvme0n1p1
+
+mdadm --assemble /dev/md0 dev/nvme0n1p1
+挂载单个磁盘使用--run
+mdadm --assemble /dev/md0 dev/nvme0n1p1 --run
+
+
+https://serverfault.com/questions/404586/reading-off-of-mdadm-drives-after-server-died
