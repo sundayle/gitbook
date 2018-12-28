@@ -81,6 +81,9 @@ mdadm -Ds > /etc/mdadm.conf
 ## 邮件报警
 ```
 echo "MAILADDR admin@sundayle.com" >> /etc/mdadm.conf
+systemctl start mdmonitor
+systemctl status mdmonitor
+
 ```
 
 
