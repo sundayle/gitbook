@@ -97,8 +97,7 @@ mdadm --manage /dev/md124 --add /dev/nvme0n1p4
 
 
 
-# NVME PCIE P3700
-故障恢复
+# NVME PCIE P3700 故障恢复
 
 制作CentOS 7.5 系统启动盘
 进入恢复模式
