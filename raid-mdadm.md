@@ -78,6 +78,10 @@ UUID=2f595714-9533-4580-9b7e-b8563dcdcd5f /data         xfs defaults,noatime,nob
 ```
 mdadm -Ds > /etc/mdadm.conf
 ```
+## 邮件报警
+```
+echo "MAILADDR admin@sundayle.com" >> /etc/mdadm.conf
+```
 
 
 
