@@ -111,7 +111,7 @@ mdadm --examine /dev/nvme0n1p1
 mdadm --assemble /dev/md0 dev/nvme0n1p1 --run
 mount /dev/md0 /mnt
 ```
-拷贝数据
+拷贝数据  
 
 组装阵列
 ```
