@@ -13,7 +13,7 @@
   * [RAID Mdadm](raid-mdadm.md)
 * [Linux内核](kernel.md)
   * [CentOS 7 升级内核](kernel/centos-7-upgrade-kernel.md)
-* [Repo](repo.md)
+* [国内镜像源](repo.md)
   * [CentOS 7 YUM和EPEL](repo/aliyun-mirrors.md)
 * [Dockerfile](dockerfile.md)
   * Nginx
