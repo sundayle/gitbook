@@ -111,7 +111,9 @@ mount /dev/md0 /mnt
 组装阵列
 mdadm --assemble /dev/md0 /dev/nvme0n0p1 /dev/nvme1n1p1
 
-
+更换raid盘注意拷贝引导扇区数据至新盘
+ dd if=/dev/zero of=/mnt/testfile bs=1M count=1000 oflag=dsync
+ 
 https://serverfault.com/questions/404586/reading-off-of-mdadm-drives-after-server-died
 
 https://www.digitalocean.com/community/tutorials/how-to-manage-raid-arrays-with-mdadm-on-ubuntu-16-04
