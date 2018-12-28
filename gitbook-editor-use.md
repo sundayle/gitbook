@@ -1,5 +1,4 @@
-
-# gitbook editor win7 错误解决
+# win7 gitbook editor 上传错误解决
 
 
 windows7 pull/push failed to get server certificate
