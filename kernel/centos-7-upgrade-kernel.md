@@ -30,3 +30,8 @@ CentOS Linux (0-rescue-4de75e64d2d54ea49d12a4b730b2e839) 7 (Core)
 grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
+
+
+
+awk -F\' '$1=="menuentry " {print $2}' /etc/grub2-efi.cfg
+https://access.redhat.com/solutions/1605183
