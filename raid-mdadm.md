@@ -110,3 +110,5 @@ mount /dev/md0 /mnt
 
 
 https://serverfault.com/questions/404586/reading-off-of-mdadm-drives-after-server-died
+
+https://www.digitalocean.com/community/tutorials/how-to-manage-raid-arrays-with-mdadm-on-ubuntu-16-04
