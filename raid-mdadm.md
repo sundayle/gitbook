@@ -92,27 +92,36 @@ mdadm --manage --set-faulty /dev/md124 /dev/nvme0n1p4
 查看邮件 有报警信息
 
 故障移除
+```
 mdadm /dev/md124 --remove /dev/nvme0n1p4
 mdadm --manage /dev/md124 --add /dev/nvme0n1p4
-
+```
 
 
 # NVME PCIE P3700 故障恢复
 
 制作CentOS 7.5 系统启动盘
 进入恢复模式
+```
 mdadm --examine /dev/nvme0n1p1
+```
 
 挂载单个磁盘使用 --run
+```
 mdadm --assemble /dev/md0 dev/nvme0n1p1 --run
 mount /dev/md0 /mnt
+```
 拷贝数据
 
 组装阵列
+```
 mdadm --assemble /dev/md0 /dev/nvme0n0p1 /dev/nvme1n1p1
+```
 
 更换raid盘注意拷贝引导扇区数据至新盘
- dd if=/dev/zero of=/mnt/testfile bs=1M count=1000 oflag=dsync
+```
+dd if=/dev/zero of=/mnt/testfile bs=1M count=1000 oflag=dsync
+```
  
 https://serverfault.com/questions/404586/reading-off-of-mdadm-drives-after-server-died
 
