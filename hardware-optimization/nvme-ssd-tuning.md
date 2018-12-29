@@ -30,7 +30,7 @@ systemctl stop irqbalance
 
 https://itpeernetwork.intel.com/tuning-performance-intel-optane-ssds-linux-operating-systems/#gs.WVTfE3I
 
-## R730XD PCIE 固态 风扇狂转解决
+## R730XD 加PCIE固态后风扇狂转
 idrac设置 网络 PIMI设置 启动LAN上的IPMI
 ```
 yum install OpenIPMI OpenIPMI-tools
