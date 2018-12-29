@@ -17,7 +17,7 @@ yum --enablerepo="elrepo-kernel" list --showduplicates | sort -r | grep kernel-m
 kernel-ml.x86_64                            4.20.0-1.el7.elrepo        elrepo-kernel
 kernel-ml.x86_64                            4.19.12-1.el7.elrepo       elrepo-kernel
 
-yum --enablerepo="elrepo-kernel" install kernel-ml-4.19.12-1.el7.elrepo.x86_64 -y
+yum --enablerepo="elrepo-kernel" install kernel-ml-4.19.12-1.el7.elrepo.x86_64 kernel-ml-devel-4.19.12-1.el7.elrepo.x86_64 -y
 ```
 
 ```
