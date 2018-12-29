@@ -35,3 +35,20 @@ grub2-mkconfig -o /boot/grub2/grub.cfg # On BIOS
 grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg # On UEFI
 ```
 https://access.redhat.com/solutions/1605183
+
+
+```
+yum groupinstall -y "Development Tools" 
+yum install -y ncurses-devel qt-devel
+
+https://www.kernel.org/
+wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.19.12.tar.xz
+tar xf  linux-4.19.12.tar.xz 
+cd linux-4.19.12
+```
+
+# 查找清除旧内核 
+rpm -qa | grep kernel
+
+
+
