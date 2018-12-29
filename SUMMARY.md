@@ -17,6 +17,6 @@
   * [CentOS 7 YUM和EPEL](repo/aliyun-mirrors.md)
 * [Dockerfile](dockerfile.md)
   * Nginx
-  * PHP7
+  * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
 
