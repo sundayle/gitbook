@@ -30,14 +30,14 @@ systemctl stop irqbalance
 
 https://itpeernetwork.intel.com/tuning-performance-intel-optane-ssds-linux-operating-systems/#gs.WVTfE3I
 
-R730XD PCIE 固态 风扇狂转解决
+## R730XD PCIE 固态 风扇狂转解决
 
 yum install OpenIPMI OpenIPMI-tools
 chkconfig ipmi on  # << optional for the task
 service ipmi start  # << optional for the task
 
 
-2. Query Dell's Third-Party PCIe card based default system fan response:
+Query Dell's Third-Party PCIe card based default system fan response:
 ```
 ipmitool raw 0x30 0xce 0x01 0x16 0x05 0x00 0x00 0x00
 
