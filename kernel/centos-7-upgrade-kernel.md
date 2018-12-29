@@ -26,13 +26,10 @@ CentOS Linux (4.19.12-1.el7.elrepo.x86_64) 7 (Core)
 CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core)
 CentOS Linux (0-rescue-4de75e64d2d54ea49d12a4b730b2e839) 7 (Core)
 ```
+
 ```
 grub2-set-default 0
-grub2-mkconfig -o /boot/grub2/grub.cfg
+grub2-mkconfig -o /boot/grub2/grub.cfg # On BIOS
+grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg # On UEFI
 ```
-
-UEFI
-grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
-
-awk -F\' '$1=="menuentry " {print $2}' /etc/grub2-efi.cfg
 https://access.redhat.com/solutions/1605183
