@@ -31,7 +31,8 @@ grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
-
+UEFI
+grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 
 awk -F\' '$1=="menuentry " {print $2}' /etc/grub2-efi.cfg
 https://access.redhat.com/solutions/1605183
