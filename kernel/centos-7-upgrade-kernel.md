@@ -41,7 +41,6 @@ grub2-set-default 0
 grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 ```
 
-
 https://access.redhat.com/solutions/1605183
 
 
