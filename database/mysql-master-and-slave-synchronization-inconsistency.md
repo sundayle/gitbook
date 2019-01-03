@@ -13,3 +13,4 @@ begin;commit;
 set gitd_next=automatic;
 start slave;
 show slave status \G;
+```
