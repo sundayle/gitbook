@@ -34,14 +34,15 @@ show slave status \G;
 ```
 
 
-
+```
                Last_SQL_Errno: 1864
                Last_SQL_Error: Cannot schedule event Rows_query, relay-log name ./store42-relay-bin.001148, position 253381985 to Worker thread because its size 16777219 exceeds 16777216 of slave_pending_jobs_size_max.
-
-
+```
+```
 stop slave;
 set global slave_pending_jobs_size_max=20000000;
 start slave;
+```
 
 https://yq.aliyun.com/sqlarticle/68208
 
