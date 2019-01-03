@@ -1,16 +1,10 @@
 # 主从同步不一致
 
 ```
-       Last_Errno: 1197
-       Last_Error: Coordinator stopped because there were error(s) in the worker(s). The most recent failure 
-being: Worker 4 failed executing transaction '607e7112-8c78-11e7-923d-801844e0bbe8:1992420' at master log 
-mysql-bin.000767, end_log_pos 68191221. See error log and/or performance_schema.replication_applier_status_by_worker
-table for more details about this failure or others, if any.
-```
 
         Last_SQL_Errno: 1197
         Last_SQL_Error: Coordinator stopped because there were error(s) in the worker(s). The most recent failure being: Worker 4 failed executing transaction '607e7112-8c78-11e7-923d-801844e0bbe8:1992764' at master log mysql-bin.000767, end_log_pos 258072145. See error log and/or performance_schema.replication_applier_status_by_worker table for more details about this failure or others, if any.
-
+```
 # 查看详情
 ```
 mysql> select * from performance_schema.replication_applier_status_by_worker where LAST_ERROR_NUMBER=1197\G;
@@ -27,6 +21,7 @@ LAST_SEEN_TRANSACTION: 607e7112-8c78-11e7-923d-801844e0bbe8:1992764
 
 ERROR: 
 No query specified
+
 ```
 
 # 跳过错误
