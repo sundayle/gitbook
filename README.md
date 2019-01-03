@@ -10,13 +10,15 @@
     * [Nginx 安装](software-installation/nginx/nginx-install.md)
   * [PHP](software-installation/php.md)
     * [PHP 安装](software-installation/php/php-install.md)
-  * [RAID Mdadm](raid-mdadm.md)
+  * [软RAID](raid-mdadm.md)
 * [Linux内核](kernel.md)
   * [CentOS 7 升级内核](kernel/centos-7-upgrade-kernel.md)
-* [Repo](repo.md)
+* [国内镜像源](repo.md)
   * [CentOS 7 YUM和EPEL](repo/aliyun-mirrors.md)
 * [Dockerfile](dockerfile.md)
   * Nginx
-  * PHP7
+  * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
+* [数据库](database.md)
+  * [MySQL主从同步不一致](database/mysql-master-and-slave-synchronization-inconsistency.md)
 
