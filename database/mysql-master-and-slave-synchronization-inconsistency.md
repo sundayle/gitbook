@@ -28,7 +28,7 @@ No query specified
 stop slave;
 set gtid_next = '607e7112-8c78-11e7-923d-801844e0bbe8:1992764';
 begin;commit;
-set gitd_next=automatic;
+set gtid_next=automatic;
 start slave;
 show slave status \G;
 ```
