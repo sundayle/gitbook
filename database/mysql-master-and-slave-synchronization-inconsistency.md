@@ -51,10 +51,8 @@ https://yq.aliyun.com/sqlarticle/68208
                Last_SQL_Errno: 1197
                Last_SQL_Error: Could not execute Write_rows event on table mall_amusic_shop.ben_order_suit_product_detail; Multi-statement transaction required more than 'max_binlog_cache_size' bytes of storage; increase this mysqld variable and try again, Error_code: 1197; Writing one row to the row-based binary log failed, Error_code: 1534; handler error HA_ERR_RBR_LOGGING_FAILED; the event's master log mysql-bin.000768, end_log_pos 75178914
 ```
-    
-```        
 
-
+```       
 #调整max_binlog_cache_size为2G   2048*1024*1024
 set global max_binlog_cache_size=2147483648;
 ```
