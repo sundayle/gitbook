@@ -6,9 +6,10 @@
 ```
 
 ```
-STOP SLAVE;
-SET @@SESSION.GTID_NEXT = '607e7112-8c78-11e7-923d-801844e0bbe8:1992420';
-BEGIN; COMMIT;
-SET @@SESSION.GTID_NEXT = AUTOMATIC;
-START SLAVE;
+stop slave;
+set gtid_next = '607e7112-8c78-11e7-923d-801844e0bbe8:1992420';
+begin;commit;
+set gitd_next=automatic;
+start slave;
+show slave status \G;
 ```
