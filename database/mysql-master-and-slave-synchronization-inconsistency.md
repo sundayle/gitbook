@@ -5,6 +5,24 @@
                    Last_Error: Coordinator stopped because there were error(s) in the worker(s). The most recent failure being: Worker 4 failed executing transaction '607e7112-8c78-11e7-923d-801844e0bbe8:1992420' at master log mysql-bin.000767, end_log_pos 68191221. See error log and/or performance_schema.replication_applier_status_by_worker table for more details about this failure or others, if any.
 ```
 
+# 查看详情
+```
+mysql> select * from performance_schema.replication_applier_status_by_worker where LAST_ERROR_NUMBER=1197\G;
+*************************** 1. row ***************************
+         CHANNEL_NAME: 
+            WORKER_ID: 4
+            THREAD_ID: NULL
+        SERVICE_STATE: OFF
+LAST_SEEN_TRANSACTION: 607e7112-8c78-11e7-923d-801844e0bbe8:1992764
+    LAST_ERROR_NUMBER: 1197
+   LAST_ERROR_MESSAGE: Worker 4 failed executing transaction '607e7112-8c78-11e7-923d-801844e0bbe8:1992764' at master log mysql-bin.000767, end_log_pos 258072145; Could not execute Write_rows event on table mall_amusic_shop.ben_logistics_notify_log; Multi-statement transaction required more than 'max_binlog_cache_size' bytes of storage; increase this mysqld variable and try again, Error_code: 1197; Writing one row to the row-based binary log failed, Error_code: 1534; handler error HA_ERR_RBR_LOGGING_FAILED; the event's master log mysql-bin.000767, end_log_pos 258072145
+ LAST_ERROR_TIMESTAMP: 2019-01-03 13:32:08
+1 row in set (0.00 sec)
+
+ERROR: 
+No query specified
+```
+
 # 跳过错误
 ```
 stop slave;
