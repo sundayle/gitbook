@@ -43,3 +43,38 @@ stop slave;
 set global slave_pending_jobs_size_max=20000000;
 start slave;
 
+https://yq.aliyun.com/sqlarticle/68208
+
+
+
+               Last_SQL_Errno: 1197
+               Last_SQL_Error: Could not execute Write_rows event on table mall_amusic_shop.ben_order_suit_product_detail; Multi-statement transaction required more than 'max_binlog_cache_size' bytes of storage; increase this mysqld variable and try again, Error_code: 1197; Writing one row to the row-based binary log failed, Error_code: 1534; handler error HA_ERR_RBR_LOGGING_FAILED; the event's master log mysql-bin.000768, end_log_pos 75178914
+
+
+
+               Last_SQL_Errno: 1197
+               Last_SQL_Error: Could not execute Write_rows event on table mall_amusic_shop.ben_order_suit_product_detail; Multi-statement transaction required more than 'max_binlog_cache_size' bytes of storage; increase this mysqld variable and try again, Error_code: 1197; Writing one row to the row-based binary log failed, Error_code: 1534; handler error HA_ERR_RBR_LOGGING_FAILED; the event's master log mysql-bin.000768, end_log_pos 75178914
+               
++-------------------+---------+
+| Variable_name     | Value   |
++-------------------+---------+
+| binlog_cache_size | 4194304 |
++-------------------+---------+
+1 row in set (0.00 sec)
+
+mysql> show variables like 'max_binlog_cache_size';
++-----------------------+---------+
+| Variable_name         | Value   |
++-----------------------+---------+
+| max_binlog_cache_size | 8388608 |
++-----------------------+---------+
+
+调整为2G   2048*1024*1024
+set global max_binlog_cache_size=2147483648;
+
+
+
+
+
+
+
