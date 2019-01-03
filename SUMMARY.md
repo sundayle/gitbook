@@ -19,6 +19,8 @@
   * Nginx
   * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
-* [MySQL](mysql.md)
-  * [主从同步不一致](master-slave-synchronization.md)
+* [数据库](mysql.md)
+  * [MySQL](mysql.md)
+    * [主从同步不一致](master-slave-synchronization.md)
+
 
