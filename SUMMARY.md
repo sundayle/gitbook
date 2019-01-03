@@ -21,5 +21,5 @@
   * [Cobbler](dockerfile/cobbler.md)
 * [数据库](database.md)
   * [MySQL主从同步不一致](database/mysql-master-and-slave-synchronization-inconsistency.md)
-    * [Percona工具解决不一致](database/mysql-master-and-slave-synchronization-inconsistency/pt-table-checksum.md)
+  * [Percona工具解决不一致](database/mysql-master-and-slave-synchronization-inconsistency/pt-table-checksum.md)
 
