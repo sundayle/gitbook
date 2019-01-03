@@ -20,7 +20,5 @@
   * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
 * [数据库](database.md)
-  * [MySQL](mysql.md)
-    * [主从同步不一致](master-slave-synchronization.md)
-
+  * [MySQL主从同步不一致](database/mysql-master-and-slave-synchronization-inconsistency.md)
 
