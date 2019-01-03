@@ -26,7 +26,7 @@ No query specified
 # 跳过错误
 ```
 stop slave;
-set gtid_next = '607e7112-8c78-11e7-923d-801844e0bbe8:1992420';
+set gtid_next = '607e7112-8c78-11e7-923d-801844e0bbe8:1992764';
 begin;commit;
 set gitd_next=automatic;
 start slave;
