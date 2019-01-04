@@ -19,8 +19,9 @@
   * [MySQL主从同步不一致](database/mysql-master-and-slave-synchronization-inconsistency.md)
   * [Percona工具解决不一致](database/mysql-master-and-slave-synchronization-inconsistency/pt-table-checksum.md)
 * [Docker](docker.md)
-  * [Docker 常用命令安装](docker/docker-common-command.md)
+  * [常用命令安装](docker/docker-common-command.md)
   * [镜像国内源](docker/docker-image-source.md)
+  * [reload php-fpm配置](docker/docker-reload-app.md)
 * [Dockerfile](dockerfile.md)
   * Nginx
   * [PHP7](dockerfile/php7.md)

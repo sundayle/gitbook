@@ -2,4 +2,5 @@
 ```
 apt-get install net-tools
 apt-get install procps
+vim
 ```
