@@ -23,7 +23,7 @@
   * [镜像国内源](docker/docker-image-source.md)
   * [php-fpm reload](docker/docker-reload-app.md)
 * [Dockerfile](dockerfile.md)
-  * Nginx
+  * [Nginx](dockerfile/nginx.md)
   * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
 
