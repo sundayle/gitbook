@@ -21,7 +21,7 @@
 * [Docker](docker.md)
   * [常用命令安装](docker/docker-common-command.md)
   * [镜像国内源](docker/docker-image-source.md)
-  * [reload php-fpm配置](docker/docker-reload-app.md)
+  * [php-fpm reload](docker/docker-reload-app.md)
 * [Dockerfile](dockerfile.md)
   * Nginx
   * [PHP7](dockerfile/php7.md)
