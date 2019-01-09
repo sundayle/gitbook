@@ -2,20 +2,49 @@
 ```
 FROM php:7.1.25-fpm-stretch
 
+LABEL maintainer="shaopenghk@qq.com"
+
 ENV APT_REPO='mirrors.163.com'
 #http://mirrors.aliyun.com
 
-# imagick
+### mysqli
 RUN set -x \
     && sed -ri 's/(deb|security).debian.org/'$APT_REPO'/g' /etc/apt/sources.list \
-    && apt-get clean \
     && apt-get update \
-    && apt-get install --no-install-recommends --no-install-suggests -y \
+    && apt-get install -y \
+          --no-install-recommends \
+          --no-install-suggests \
+          libmcrypt-dev \
+          libpng-dev \
+          libxml2-dev \
+    && docker-php-ext-install \
+           pdo_mysql \
+           soap \
+           sockets \
+           mysqli \
+           exif \
+           gd \
+           gettext \
+           mcrypt \
+           pcntl \
+           shmop \
+           soap \
+           sysvsem \
+           xmlrpc 
+
+### imagick
+RUN set -x \
+    && apt-get install -y \
+           --no-install-recommends \
+           --no-install-suggests -y \
+           libmcrypt-dev \
            libmagickwand-dev \
+    && export MAGICKWAND_VER=$(dpkg -s libmagickwand-dev | grep Version|awk -F : '{print $3}'|cut -c1-5)\
+    && ln -sv /usr/lib/x86_64-linux-gnu/ImageMagick-$MAGICKWAND_VER/bin-q16/MagickWand-config /usr/bin \
     && pecl install imagick \
     && docker-php-ext-enable imagick 
 
-#zbarcode
+### zbarcode
 RUN set -x \
     && apt-get install -y \
          --no-install-recommends \
@@ -24,21 +53,19 @@ RUN set -x \
          unzip \
          zbar-tools \
          libzbar-dev \
-         \
-    && ln -sv /usr/lib/x86_64-linux-gnu/ImageMagick-6.9.7/bin-q16/MagickWand-config /usr/bin \
-    #VER=$(dpkg -s libmagickwand-dev | grep Version|awk -F : '{print $3}'|cut -c1-5)
-    #/usr/lib/x86_64-linux-gnu/ImageMagick-$VER/bin-q16/MagickWand-config /usr/bin
+    #&& export MAGICKWAND_VER=$(dpkg -s libmagickwand-dev | grep Version|awk -F : '{print $3}'|cut -c1-5)\
+    #&& ln -sv /usr/lib/x86_64-linux-gnu/ImageMagick-$MAGICKWAND_VER/bin-q16/MagickWand-config /usr/bin \
+    #&& ln -sv /usr/lib/x86_64-linux-gnu/ImageMagick-6.9.7/bin-q16/MagickWand-config /usr/bin \
     && mkdir -p /usr/src/php/ext \
     && wget -O /usr/src/gophp7.zip https://github.com/jorissteyn/php-zbarcode/archive/gophp7.zip \
     && unzip /usr/src/gophp7.zip -d /usr/src/php/ext/ \
     && docker-php-ext-install php-zbarcode-gophp7
 
-## redis
+### redis
 RUN set -x \
-  && pecl install redis \
-  && docker-php-ext-enable redis \
-  \
-# amqp
+    && pecl install redis \
+    && docker-php-ext-enable redis \
+### amqp
     && apt-get install -y \
           --no-install-recommends \
           --no-install-suggests -y \
@@ -50,16 +77,13 @@ RUN set -x \
          sockets \
     && pecl install amqp \
     && docker-php-ext-enable amqp \
-    \
-# yaf
+### yaf
     && pecl install yaf \ 
     && docker-php-ext-enable yaf \
-    \
-# swoole
+### swoole
     && pecl install swoole \ 
     && docker-php-ext-enable swoole \
-    \
-# clean
+### clean
     && apt-get remove -y unzip wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
