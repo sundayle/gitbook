@@ -15,8 +15,15 @@
   * [CentOS 7 升级内核](kernel/centos-7-upgrade-kernel.md)
 * [国内镜像源](repo.md)
   * [CentOS 7 YUM和EPEL](repo/aliyun-mirrors.md)
+* [数据库](database.md)
+  * [MySQL主从同步不一致](database/mysql-master-and-slave-synchronization-inconsistency.md)
+  * [Percona工具解决不一致](database/mysql-master-and-slave-synchronization-inconsistency/pt-table-checksum.md)
+* [Docker](docker.md)
+  * [常用命令安装](docker/docker-common-command.md)
+  * [镜像国内源](docker/docker-image-source.md)
+  * [php-fpm reload](docker/docker-reload-app.md)
 * [Dockerfile](dockerfile.md)
-  * Nginx
+  * [Nginx](dockerfile/nginx.md)
   * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
 
