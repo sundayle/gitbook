@@ -2,7 +2,7 @@
 ```
 cat /etc/fstab
 
-/dev/md124 /data         xfs defaults,noatime,nobarrier    0 0
+/dev/sda5   /data      xfs  defaults,noatime,nodiratime,nobarrier    0 0
 ```
 
 ```
