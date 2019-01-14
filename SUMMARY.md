@@ -26,4 +26,6 @@
   * [Nginx](dockerfile/nginx.md)
   * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
+* [Python](python.md)
+  * [Python 循环](python/python_loop.md)
 
