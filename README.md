@@ -16,7 +16,7 @@
 * [国内镜像源](repo.md)
   * [CentOS 7 YUM和EPEL](repo/aliyun-mirrors.md)
 * [Dockerfile](dockerfile.md)
-  * Nginx
+  * [Nginx](dockerfile/nginx.md)
   * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
 * [数据库](database.md)
