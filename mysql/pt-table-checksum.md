@@ -1,3 +1,5 @@
+# 使用Percona 工具同步不一致数据
+
 ## 生成不一致表 percona.checksums
 ```
 pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --databases=mall_music --replicate=percona.checksums h=192.168.1.41,u=pt_checksums,p='pt_checksums',P=3306
