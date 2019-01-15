@@ -18,6 +18,7 @@
 * [MySQL数据库](mysql.md)
   * [MySQL主从同步不一致](mysql/master-slave-synchronization-error.md)
   * [Percona工具解决不一致](mysql/pt-table-checksum.md)
+  * [Percona工具跳过错误](mysql/pt-slave-restart-skip-error.md)
   * [MySQL1236错误](mysql/slave-gtid-1236-error.md)
   * [MySQL1062错误](mysql/slave-gtid-1062-error.md)
 * [Docker](docker.md)
