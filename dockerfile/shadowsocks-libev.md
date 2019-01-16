@@ -76,16 +76,18 @@ docker run -d --name=ssr -p 24783:8388 -e PASSWORD='sunday' -e METHOD='chacha20-
 ## docker-compose
 docker-compose.yml
 ```
-shadowsocks:
-  image: sundayle/shadowsocks
+ss:
+  image: sundayle/shadowsocks-libev
   ports:
-    - "24783:8388/tcp"
+    - "24771:8388/tcp"
+    - "24772:8388/tcp"
+    - "24775:8388/tcp"
+    - "24776:8388/tcp"
 #    - "8388:8388/udp"
   environment:
     - METHOD=chacha20-ietf-poly1305
     - PASSWORD=sunday
-    - PROTOCOL=auth_aes128_md5
-  restart: always   
+  restart: always  
 ```
 ```
 docker-compose up -d
