@@ -70,7 +70,13 @@ CMD exec ss-server \
 
 ## docker run
 ```
-docker run -d --name=ssr -p 24783:8388 -e PASSWORD='sunday' -e METHOD='chacha20-ietf-poly1305' sundayle/shadowsocksr
+docker run -d \
+--name=ss \
+--restart=always \
+-p 24783:8388 \
+-e PASSWORD='sunday' \
+-e METHOD='chacha20-ietf-poly1305' \
+sundayle/shadowsocksr
 ```
 
 ## docker-compose
