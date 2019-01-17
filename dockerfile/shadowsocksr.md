@@ -38,7 +38,10 @@ CMD python server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OB
 docker run -d \
 --name=ssr \
 --restart=always \
+-p 24771:8388 \
 -p 24772:8388 \
+-p 24773:8388 \
+-p 24774:8388 \
 -e PASSWORD='sunday' \
 -e METHOD='chacha20-ietf' \
 -e PROTOCOL='auth_aes128_md5' \
@@ -53,8 +56,8 @@ ssr:
   ports:
     - "24771:8388/tcp"
     - "24772:8388/tcp"
-    - "24775:8388/tcp"
-    - "24776:8388/tcp"
+    - "24773:8388/tcp"
+    - "24774:8388/tcp"
 #    - "8388:8388/udp"
   environment:
     - METHOD=chacha20-ietf

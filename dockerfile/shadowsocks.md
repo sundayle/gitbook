@@ -73,7 +73,10 @@ CMD exec ss-server \
 docker run -d \
 --name=ss \
 --restart=always \
+-p 24781:8388 \
+-p 24782:8388 \
 -p 24783:8388 \
+-p 24784:8388 \
 -e PASSWORD='sunday' \
 -e METHOD='chacha20-ietf-poly1305' \
 sundayle/shadowsocksr

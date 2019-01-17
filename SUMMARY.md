@@ -27,7 +27,7 @@
   * [Nginx](dockerfile/nginx.md)
   * [PHP7](dockerfile/php7.md)
   * [Cobbler](dockerfile/cobbler.md)
-  * [shadowsocks](dockerfile/shadowsocks-libev.md)
+  * [shadowsocks](dockerfile/shadowsocks.md)
   * [shadowsocksr](dockerfile/shadowsocksr.md)
 * [Python](python.md)
   * [Python 循环](python/python_loop.md)
