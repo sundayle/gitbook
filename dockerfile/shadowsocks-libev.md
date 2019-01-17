@@ -79,10 +79,10 @@ docker-compose.yml
 ss:
   image: sundayle/shadowsocks-libev
   ports:
-    - "24771:8388/tcp"
-    - "24772:8388/tcp"
-    - "24775:8388/tcp"
-    - "24776:8388/tcp"
+    - "24781:8388/tcp"
+    - "24782:8388/tcp"
+    - "24783:8388/tcp"
+    - "24784:8388/tcp"
 #    - "8388:8388/udp"
   environment:
     - METHOD=chacha20-ietf-poly1305
