@@ -16,6 +16,8 @@
 * [Linux内核](kernel.md)
   * [CentOS 7 升级内核](kernel/centos-7-upgrade-kernel.md)
 * [MySQL数据库](mysql.md)
+  * [Percona MySQL编译](mysql/percona-mysql-compile.md) 
+  * [Percona MySQL二进制安装](mysql/percona-mysql-install.md) 
   * [MySQL主从同步不一致](mysql/master-slave-synchronization-error.md)
   * [Percona工具解决不一致](mysql/pt-table-checksum.md)
   * [Percona工具跳过错误](mysql/pt-slave-restart-skip-error.md)

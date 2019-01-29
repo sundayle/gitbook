@@ -21,7 +21,7 @@ while flag:
 ```
 死循环
 ```
-while true:
+while True:
 input(>>>)
 ```
 ## for
@@ -55,11 +55,11 @@ for i in range(0,10):
 终止当前循环
 例：计算1000以内的被7整除的前10个数（for）
 ```
-count=0
+count = 0
 for i in range(0,1000,7):
     print(i)
-    count+=1
-    if count >=10:
+    count += 1
+    if count >= 10:
         break
 ```
 
@@ -85,14 +85,52 @@ num=int(num)
 for i in range(numV):
     print(num%10)
     num=num//10
-````
+```
+
 ## 练习：
-打印一个边长为n的正方形
-求100内所有奇数的和（2500）
-判断学生成绩，成绩等级A-E，其中，90分以上为'A',80-89分为'B',70-79分为'C'，60-69分为'D',60分以下为'E'
-求1到5阶乘之和
+1.打印一个边长为n的正方形
+```
+n = int(input('正方形边数:')) #4
+print('*'*n) #****
+for i in range(n-2):
+    print('*'+' '*(n-2)+'*')
+print('*'*n) #****
+```
+
+2.求100内所有奇数的和（2500)
+```
+n = 0
+for i in range(100):
+    if i%2:
+        n+=i
+print(n)
+```
+更优
+```
+n = 0
+for i in range(1,100,2):
+    n += i
+print(n)
+```
+
+3. 判断学生成绩，成绩等级A-E，其中，90分以上为'A',80-89分为'B',70-79分为'C'，60-69分为'D',60分以下为'E'
+```
+s = int(input('请输入成绩:'))
+if s >= 60:
+    if s >= 90:
+        print('A')
+    elif s >= 80:
+        print('B')
+    elif s> = 70:
+        print('C')
+    else:
+        print('D')
+else:
+    print('E')
+```
+4. 求1到5阶乘之和
 给一个数，判断它是否是为素数（质数）
-  #质数：一个大于1的自然数只能被1和它本身整除。
+\#质数：一个大于1的自然数只能被1和它本身整除。
 
 ## 作业：
 打印99乘法表
