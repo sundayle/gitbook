@@ -158,7 +158,7 @@ http {
     gzip_buffers     4 16k;
     gzip_http_version 1.1;
     gzip_comp_level 3;
-    gzip_types text/plain application/x-javascript text/css application/xml;
+    gzip_types text/plain application/javascript text/css application/xml application/x-javascript;
     gzip_vary on;
 
 
