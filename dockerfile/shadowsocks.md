@@ -70,7 +70,16 @@ CMD exec ss-server \
 
 ## docker run
 ```
-docker run -d --name=ssr -p 24783:8388 -e PASSWORD='sunday' -e METHOD='chacha20-ietf-poly1305' sundayle/shadowsocksr
+docker run -d \
+--name=ss \
+--restart=always \
+-p 24781:8388 \
+-p 24782:8388 \
+-p 24783:8388 \
+-p 24784:8388 \
+-e PASSWORD='sunday' \
+-e METHOD='chacha20-ietf-poly1305' \
+sundayle/shadowsocksr
 ```
 
 ## docker-compose
@@ -79,7 +88,7 @@ docker-compose.yml
 ss:
   image: sundayle/shadowsocks-libev
   ports:
-	- "24781:8388/tcp"
+    - "24781:8388/tcp"
     - "24782:8388/tcp"
     - "24783:8388/tcp"
     - "24784:8388/tcp"
