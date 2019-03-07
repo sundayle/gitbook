@@ -65,7 +65,7 @@ tar xf ngx_cache_purge-2.3.tar.gz
  --add-module=../nginx_module/echo-nginx-module-master \
  --add-module=../nginx_module/headers-more-nginx-module-master \
  --add-module=../nginx_module/ngx_cache_purge-2.3 \
- --add-module=../nginx_module/nginx-upload-module-2.2"
+ --add-module=../nginx_module/nginx-upload-module-2.2
 
 #--add-module=../nginx_module/nginx-rtmp-module-master \
 #--with-ld-opt=$JEMALLOC_PATH

@@ -39,10 +39,10 @@ RUN set -x \
   && wget http://package.sundayle.com/nginx/nginx_module/nginx-upload-module-2.2.zip \
   && wget http://package.sundayle.com/nginx/nginx_module/ngx_cache_purge-2.3.tar.gz \
   \
-  && unzip echo-nginx-module-master.zip \
-  && unzip headers-more-nginx-module-master.zip \
-  && unzip nginx_upstream_check_module-master.zip \
-  && unzip nginx-upload-module-2.2.zip \
+  && unzip -o echo-nginx-module-master.zip \
+  && unzip -o headers-more-nginx-module-master.zip \
+  && unzip -o nginx_upstream_check_module-master.zip \
+  && unzip -o nginx-upload-module-2.2.zip \
   && tar xf ngx_cache_purge-2.3.tar.gz \
   && tar xf nginx-$NGINX_VERSION.tar.gz \
   \
@@ -98,7 +98,7 @@ RUN set -x \
 	&& strip /usr/sbin/nginx* \
 	&& mkdir /etc/nginx/conf.d/ \
 	&& touch /usr/local/nginx/html/favicon.ico \
-  && apt-get remove --purge --auto-remove -y \
+    && apt-get remove --purge --auto-remove -y \
      gnupg1 apt-transport-https ca-certificates \
      curl wget gcc make patch tzdata unzip \
   && apt-get clean \

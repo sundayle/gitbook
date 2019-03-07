@@ -9,3 +9,5 @@ ENV APT_REPO='mirrors.163.com'
 RUN set -x \
     && sed -ri 's/(deb|security).debian.org/'$APT_REPO'/g' /etc/apt/sources.list \
 ```
+
+sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories

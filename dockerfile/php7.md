@@ -1,15 +1,12 @@
-# PHP 7 Dockerfile
-```
-FROM php:7.1.25-fpm-stretch
+FROM php:7.1.26-fpm-stretch
 
 LABEL maintainer="shaopenghk@qq.com"
 
 ENV APT_REPO='mirrors.163.com'
-#http://mirrors.aliyun.com
 
 ### mysqli
 RUN set -x \
-    && sed -ri 's/(deb|security).debian.org/'$APT_REPO'/g' /etc/apt/sources.list \
+    && sed -ri 's/(deb|security).debian.org/'${APT_REPO}'/g' /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y \
           --no-install-recommends \
@@ -17,18 +14,18 @@ RUN set -x \
           libmcrypt-dev \
           libpng-dev \
           libxml2-dev \
+          tzdata \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone \
     && docker-php-ext-install \
-           pdo_mysql \
+           mysqli \
            soap \
            sockets \
-           mysqli \
            exif \
            gd \
            gettext \
            mcrypt \
            pcntl \
            shmop \
-           soap \
            sysvsem \
            xmlrpc 
 
@@ -84,9 +81,8 @@ RUN set -x \
     && pecl install swoole \ 
     && docker-php-ext-enable swoole \
 ### clean
-    && apt-get remove -y unzip wget \
+    && apt-get remove -y unzip wget tzdata \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /usr/src/* \
     && rm -rf /tmp/pear/*
-```

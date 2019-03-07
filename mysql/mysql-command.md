@@ -17,23 +17,23 @@ alter user 'root'@'localhost' identified by '%.BFb2lQ6G!g';
 mysql> set global validate_password_policy=0;
 mysql> set global validate_password_length=1;
 
-创建数据库
+## 创建数据库
 CREATE DATABASE xiaoyaoji CHARACTER SET = utf8mb4 COLLATE =  utf8mb4_unicode_ci;
 grant all on xiaoyaoji.* to 'xwxxyj'@'localhost' identified by 'mixboy';
 grant all on xiaoyaoji.* to 'xwxxyj'@'127.0.0.1' identified by 'mixboy';
 
-导入数据库
+## 导入数据库
 mysql -uxwxxyj -hlocalhost -p xiaoyaoji < xiaoyaoji-0609.sql
 
 
-查看
+## 查看
 show processlist;
 show full processlist;
 
 show global status like 'Max_used_connections'
 show global status like '%connections%'
 
-授权及创建用户：
+## 授权及创建用户：
 grant all on db_name.* to user_name@'host' identified by 'password';
 
 
@@ -48,17 +48,17 @@ revoke proxy on ''@'' from gitlab@localhost;
 
 flush privileges;
 
-查看用户权限
+## 查看用户权限
 show grants
 show grants for www_xwx_cn@localhost;
 
-删除用户：
+## 删除用户：
 Delete FROM user Where User='test' and Host='localhost';
 
-删除用户及权限
+## 删除用户及权限
 drop user user_name@ localhost;
 
-修改密码：
+## 修改密码：
 update mysql.user set authentication_string=password('new_password') where user='root' and Host ='localhost';
 
 update mysql.user set authentication_string=password('p6EH79LGVL7ZvtjG') where user='copyright' and Host ='localhost';
