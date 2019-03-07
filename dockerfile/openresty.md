@@ -6,12 +6,13 @@ LABEL maintainer="shaopenghk@qq.com"
 # Docker Build Arguments
 ARG RESTY_VERSION="1.13.6.2"
 ARG NGINX_VERSION="1.13.6"
-ARG RESTY_LUAROCKS_VERSION="2.4.4"
-ARG RESTY_J="38"
-#ARG RESTY_J="$(getconf _NPROCESSORS_ON)"
 ARG NGINX_CUSTOM="EnjoyMusic"
-ENV USER www
-ENV GROUP www
+ARG RESTY_LUAROCKS_VERSION="3.0.4"
+ARG OPENSSL_VERSION="1.1.0i"
+ARG PCRE_VERSION="8.42"
+ARG USER=www
+ARG GROUP=www
+ENV APT_REPO='mirrors.aliyun.com'
 ARG RESTY_CONFIG_OPTIONS="\
     --with-file-aio \
     --with-poll_module \
@@ -43,16 +44,20 @@ ARG RESTY_CONFIG_OPTIONS="\
     --with-stream_ssl_module \
     --with-stream_ssl_preread_module \
     --with-threads \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --with-openssl=/tmp/openssl-${OPENSSL_VERSION} \
+    --with-pcre=/tmp/pcre-${PCRE_VERSION} \
     --add-module=/tmp/ngx_cache_purge \
     --add-module=/tmp/nginx_upstream_check \
     --add-module=/tmp/nginx-sticky-module-ng"
 
 RUN set -x \
-  && sed -ri 's/http:\/\/(deb|security).debian.org/http:\/\/mirrors.163.com/g' /etc/apt/sources.list \
+  && sed -ri 's/(deb|security).debian.org/'${APT_REPO}'/g' /etc/apt/sources.list \
   && apt-get update \
-  && apt-get install  \
+  && apt-get install -y \
         --no-install-recommends \
-        --no-install-suggests -y \
+        --no-install-suggests \
         build-essential \
         ca-certificates \
         curl \
@@ -67,12 +72,16 @@ RUN set -x \
         perl \
         unzip \
         zlib1g-dev \
-        libpcre3-dev \
-        libssl-dev \
+        #libpcre3-dev \
+        #libssl-dev \
         tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone \
-    && useradd -u 1001 -s /sbin/nologin www \
+    && useradd -u 1001 -s /sbin/nologin ${USER} \
     && cd /tmp \
+    && curl -fSL -o openssl-${OPENSSL_VERSION}.tar.gz http://package.sundayle.com/nginx/openssl-${OPENSSL_VERSION}.tar.gz \
+    && tar xzf openssl-${OPENSSL_VERSION}.tar.gz \
+    && curl -fSL -o pcre-${PCRE_VERSION}.tar.gz http://package.sundayle.com/nginx/pcre-${PCRE_VERSION}.tar.gz \
+    && tar xzf pcre-${PCRE_VERSION}.tar.gz \
     && curl -fSL -o nginx_upstream_check.zip http://package.sundayle.com/nginx/openresty_module/nginx_upstream_check_module.zip \
     && unzip -j -o -d nginx_upstream_check nginx_upstream_check.zip \
     && curl -fSL -o nginx-sticky-module-ng.zip http://package.sundayle.com/nginx/openresty_module/nginx-sticky-module-ng.zip \
@@ -85,9 +94,9 @@ RUN set -x \
     && sed -i -e 's#'${NGINX_VERSION}'##g' -e 's#openresty/#'${NGINX_CUSTOM}'#g' -e 's#"NGINX"#"'${NGINX_CUSTOM}'"#g' -e 's#".2"##g' bundle/nginx-${NGINX_VERSION}/src/core/nginx.h \
     && sed -i 's#>openresty<#>'${NIGNX_CUSTOM}'<#g' bundle/nginx-${NGINX_VERSION}/src/http/ngx_http_special_response.c \
     && sed -i 's#Server: openresty#Server: '${NIGNX_CUSTOM}'#g' bundle/nginx-${NGINX_VERSION}/src/http/ngx_http_header_filter_module.c \
-    && ./configure -j${RESTY_J} ${RESTY_CONFIG_OPTIONS} \
-    && make -j${RESTY_J} \
-    && make -j${RESTY_J} install \
+    && ./configure -j$(getconf _NPROCESSORS_ONLN) ${RESTY_CONFIG_OPTIONS} \
+    && make -j$(getconf _NPROCESSORS_ONLN) \
+    && make -j$(getconf _NPROCESSORS_ONLN) install \
     && cd /tmp \
     && rm -rf /tmp/* \
     && apt-get remove --purge --auto-remove -y \
@@ -97,17 +106,15 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/* \
     && ln -sv /usr/local/openresty/nginx/conf /etc/nginx \
     && mkdir -p /etc/nginx/conf.d \
-    && mkdir -p /var/log/nginx 
     
 # Add additional binaries into PATH for convenience
 ENV PATH=$PATH:/usr/local/openresty/luajit/bin:/usr/local/openresty/nginx/sbin:/usr/local/openresty/bin
 
 # Copy nginx configuration files
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
 
 STOPSIGNAL SIGQUIT
-
 ```
