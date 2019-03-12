@@ -1,3 +1,4 @@
+```
 FROM php:7.1.26-fpm-stretch
 
 LABEL maintainer="shaopenghk@qq.com"
@@ -86,3 +87,5 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /usr/src/* \
     && rm -rf /tmp/pear/*
+​```s
+```
