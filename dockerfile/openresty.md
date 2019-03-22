@@ -12,6 +12,7 @@ ARG OPENSSL_VERSION="1.1.0i"
 ARG PCRE_VERSION="8.42"
 ARG USER=www
 ARG GROUP=www
+ENV LANG C.UTF-8
 ENV APT_REPO='mirrors.aliyun.com'
 ARG UPSTREAM_CHECK_PATCH="check_1.12.1+.patch"
 ARG RESTY_CONFIG_OPTIONS="\
@@ -109,14 +110,15 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/* \
     && ln -sv /usr/local/openresty/nginx/conf /etc/nginx \
     && mkdir -p /etc/nginx/conf.d \
-    && mkdir -p /data/logs
+    && mkdir -p /var/log/nginx \
+    && mkdir -p /data/logs/nginx
     
 # Add additional binaries into PATH for convenience
 ENV PATH=$PATH:/usr/local/openresty/luajit/bin:/usr/local/openresty/nginx/sbin:/usr/local/openresty/bin
 
 # Copy nginx configuration files
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY conf.d/default.conf /etc/nginx/conf.d/default.conf
+#COPY nginx.conf /etc/nginx/nginx.conf
+#COPY conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
 
